@@ -8,8 +8,13 @@ edition = "2021"
 name = "mimic"
 path = "src/mimic.rs"
 
+[[bin]]
+name = "turtle_teleop_key"
+path = "src/teleop_turtle_key.rs"
+
 [dependencies]
 anyhow = "1.0.71"
 rclrs = "*"
 geometry_msgs = "*"
 turtlesim = "*"
+crossterm = "0.26.1"
