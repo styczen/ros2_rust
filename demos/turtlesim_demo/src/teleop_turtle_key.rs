@@ -1,5 +1,6 @@
+use anyhow::Result;
 use crossterm::{
-    event::{read, Event, KeyCode, KeyEvent},
+    event::{read, Event, KeyCode, KeyEvent, KeyModifiers},
     terminal::{disable_raw_mode, enable_raw_mode},
 };
 
@@ -34,7 +35,7 @@ impl TeleopTurtleNode {
     }
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() -> Result<()> {
     println!("{}", INTRO);
     let context = rclrs::Context::new(std::env::args())?;
     let node = TeleopTurtleNode::new(&context)?;
@@ -65,6 +66,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }) => linear = -1.0,
             Event::Key(KeyEvent {
                 code: KeyCode::Char('q'),
+                ..
+            }) => break,
+            Event::Key(KeyEvent {
+                modifiers: KeyModifiers::CONTROL,
+                code: KeyCode::Char('c'),
                 ..
             }) => break,
             _ => (),
