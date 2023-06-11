@@ -12,9 +12,14 @@ path = "src/mimic.rs"
 name = "turtle_teleop_key"
 path = "src/teleop_turtle_key.rs"
 
+[[bin]]
+name = "draw_square"
+path = "src/draw_square.rs"
+
 [dependencies]
 anyhow = "1.0.71"
 rclrs = "*"
 geometry_msgs = "*"
+std_srvs = "*"
 turtlesim = "*"
 crossterm = "0.26.1"

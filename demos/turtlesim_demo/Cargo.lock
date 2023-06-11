@@ -537,6 +537,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "std_srvs"
+version = "4.2.3"
+dependencies = [
+ "rosidl_runtime_rs",
+]
+
+[[package]]
 name = "strsim"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -586,6 +593,7 @@ dependencies = [
  "crossterm",
  "geometry_msgs",
  "rclrs",
+ "std_srvs",
  "turtlesim",
 ]
 
@@ -788,10 +796,6 @@ version = "4.2.3"
 [[patch.unused]]
 name = "statistics_msgs"
 version = "1.2.1"
-
-[[patch.unused]]
-name = "std_srvs"
-version = "4.2.3"
 
 [[patch.unused]]
 name = "stereo_msgs"
